@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    float speed = 15f;
+    float speed = 105f;
     [SerializeField]
-    float mapField = 5f;
+    float mapField = 13f;
 
     Rigidbody2D rb;
 
