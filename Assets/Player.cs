@@ -21,7 +21,13 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
         Vector2 newPosition = rb.position + Vector2.right * x;
-        newPosition.x = Mathf.Clamp(newPosition.x , -mapField , mapField);
+        newPosition.x = Mathf.Clamp(newPosition.x, -mapField, mapField);
         rb.MovePosition(newPosition);
     }
+
+    void OnCollisionEnter2D()
+    {
+        score.scoreValue = 0;
+        FindObjectOfType<GameManager>().EndGame();
+    } 
 }
